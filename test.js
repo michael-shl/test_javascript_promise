@@ -3,15 +3,18 @@ async function test_await() {
   console.log("Ready for testing async/await:");
   let await_promise = await fetch("https://jsonplaceholder.typicode.com/posts/1");
   console.log(
-    "This is a console.log message inside the test_await() function, I will go second."
+    "This is 1st text console.log message inside the test_await() function, I will print 4th."
   );
   let data = await await_promise.json();
   console.log("The response of await_promise is:", data);
+  console.log(
+    "This is 2nd text console.log message inside the test_await() function. I will print 5th or 6th."
+  );
 }
 
 test_await();
 console.log(
-  "This is a console.log message outside of functions. I will print first"
+  "This is a console.log message outside of functions. I will print 1st."
 );
 
 function test_thenMethod() {
@@ -23,7 +26,7 @@ function test_thenMethod() {
     })
     .then((data) => {
       console.log(
-        "This is another console.log message inside the test_thenMethod() function, I will go third."
+        "This is a console.log message inside the then() chain, I will print 5th or 6th."
       );
       console.log("The response data of the then() method is:", data);
     })
@@ -31,9 +34,9 @@ function test_thenMethod() {
       console.error("Error fetching data for then_promise:", error);
     });
   console.log(
-    "This is a console.log message inside the test_thenMethod() function. I will go first."
+    "This is a console.log message inside the test_thenMethod() function. I will print 2nd."
   );
 }
 
 test_thenMethod();
-console.log("This is the last line of the entire code");
+console.log("This is the last line of the entire code.I will print 3rd.");
