@@ -6,14 +6,13 @@ async function test_await() {
     "This is a console.log message inside the test_await() function, I will go second."
   );
   let data = await await_promise.json();
-  console.log("The response of await_promise is:", data);}
+  console.log("The response of await_promise is:", data);
+}
 
 test_await();
 console.log(
   "This is a console.log message outside of functions. I will print first"
 );
-
-
 
 function test_thenMethod() {
   console.log("====================================");
@@ -26,7 +25,7 @@ function test_thenMethod() {
       console.log(
         "This is another console.log message inside the test_thenMethod() function, I will go third."
       );
-      console.log("The response data of the then() mothed is:", data);
+      console.log("The response data of the then() method is:", data);
     })
     .catch((error) => {
       console.error("Error fetching data for then_promise:", error);
